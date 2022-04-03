@@ -1,0 +1,24 @@
+.tasks{
+    position : relative;    
+}
+
+.tasks-container {
+    display: flex;
+    padding-top: 2rem;
+}
+
+.container-heading {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-left: 1rem;
+}
+
+.container-icon {
+    color: var(--secondary-color);
+    margin-left: auto;
+    margin-right: 1rem;
+    border: none;
+    background-color: var(--primary-color);
+    font-size: 2rem;
+    border-radius: 50%;
+}
