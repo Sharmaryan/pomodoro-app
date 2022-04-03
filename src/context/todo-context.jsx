@@ -7,15 +7,13 @@ const TodoContext = createContext();
 const useTodo = () => useContext(TodoContext);
 
 const TodoProvider = ({ children }) => {
-  const [{ showModal, taskAdded, editClicked }, dispatch] = useReducer(
+  const [{ showModal, taskAdded, editClicked, itemBeingEdited }, dispatch] = useReducer(
     todoReducer,
     {
       showModal: false,
-      title: "",
-      desc: "",
       taskAdded: [],
       editClicked: false,
-      itemBeingEdited: "",
+      itemBeingEdited: null,
     }
   );
 
@@ -26,6 +24,7 @@ const TodoProvider = ({ children }) => {
         taskAdded,
         dispatch,
         editClicked,
+        itemBeingEdited
       }}
     >
       {children}

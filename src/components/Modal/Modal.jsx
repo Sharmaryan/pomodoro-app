@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Modal.css";
 import { useTodo } from "../../context/todo-context";
 export const Modal = () => {
-  const { editClicked, dispatch } = useTodo();
+  const { editClicked, dispatch, itemBeingEdited } = useTodo();
+
+  const [title, setTitle] = useState(editClicked ? itemBeingEdited.title : "");
+  const [desc, setDesc] = useState(editClicked ? itemBeingEdited.desc : "");
 
   return (
     <div className="modal">
@@ -11,7 +14,8 @@ export const Modal = () => {
           type="text"
           placeholder="Add Title"
           className="modal-input modal-title"
-          onChange={(e) => dispatch({ type: "TITLE", payload: e.target.value })}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
         <textarea
           cols="30"
@@ -19,21 +23,29 @@ export const Modal = () => {
           type="text"
           placeholder="Add Description"
           className="modal-input modal-desc"
-          onChange={(e) => dispatch({ type: "DESC", payload: e.target.value })}
+          value={desc}
+          onChange={(e) => setDesc(e.target.value)}
         ></textarea>
       </form>
       <div className="modal-buttons">
         {editClicked ? (
           <button
             className="modal-btn modal-add"
-            onClick={() => dispatch({ type: "UPDATE_HANDLER" })}
+            onClick={() =>
+              dispatch({
+                type: "UPDATE_HANDLER",
+                payload: { id: itemBeingEdited.id, title, desc },
+              })
+            }
           >
             update
           </button>
         ) : (
           <button
             className="modal-btn modal-add"
-            onClick={() => dispatch({ type: "ADD_HANDLER" })}
+            onClick={() =>
+              dispatch({ type: "ADD_HANDLER", payload: { title, desc } })
+            }
           >
             add
           </button>

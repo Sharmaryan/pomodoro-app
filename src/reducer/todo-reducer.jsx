@@ -3,10 +3,6 @@ export const todoReducer = (state, action) => {
   const { payload, type } = action;
 
   switch (type) {
-    case "TITLE":
-      return { ...state, title: payload };
-    case "DESC":
-      return { ...state, desc: payload };
     case "MODAL":
       return { ...state, showModal: true, editClicked: false };
     case "ADD_HANDLER":
@@ -17,8 +13,8 @@ export const todoReducer = (state, action) => {
         taskAdded: [
           ...state.taskAdded,
           {
-            title: state.title,
-            desc: state.desc,
+            title: payload.title,
+            desc: payload.desc,
             id: uuid(),
           },
         ],
@@ -38,11 +34,10 @@ export const todoReducer = (state, action) => {
         ...state,
         taskAdded: [
           ...state.taskAdded.map((task) => {
-            if (task.id !== state.itemBeingEdited) {
-              return { ...task };
-            } else {
-              return { ...task, title: state.title, desc: state.desc };
+            if (task.id === payload.id) {
+              return { ...task, title: payload.title, desc: payload.desc };
             }
+            return task;
           }),
         ],
         showModal: false,
@@ -52,7 +47,7 @@ export const todoReducer = (state, action) => {
         ...state,
         showModal: true,
         editClicked: true,
-        itemBeingEdited: payload.id,
+        itemBeingEdited: payload,
       };
     default:
       return { ...state };
