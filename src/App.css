@@ -7,8 +7,8 @@
   --primary-color: rgb(6, 179, 83);
   --secondary-color: rgb(255, 255, 255);
   --black : black;
+  --lightblue: lightblue;
 }
 .App {
   text-align: center;
-  background-color: rgb(159, 240, 159);
 }

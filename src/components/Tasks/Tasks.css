@@ -2,6 +2,6 @@
     width: 30rem;
     min-height: 20rem;
     margin: 4rem auto;
-    background-color: white;
+    background-color:  var( --lightblue);
     border-radius: 2%;
 }
