@@ -1,7 +1,12 @@
-import React from 'react'
-
+import React from "react";
+import { PomodoroTimer } from "../../components/index";
+import { PomodoroDescription } from "../../components/index";
+import './Pomodoro.css'
 export const Pomodoro = () => {
   return (
-    <div>Pomodoro</div>
-  )
-}
+    <div className="pomodoro">
+      <PomodoroTimer />
+      <PomodoroDescription/>
+    </div>
+  );
+};

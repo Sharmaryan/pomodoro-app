@@ -1,7 +1,6 @@
 import { v4 as uuid } from "uuid";
 export const todoReducer = (state, action) => {
   const { payload, type } = action;
-
   switch (type) {
     case "MODAL":
       return { ...state, showModal: true, editClicked: false };
@@ -15,6 +14,8 @@ export const todoReducer = (state, action) => {
           {
             title: payload.title,
             desc: payload.desc,
+            timerLimit: payload.timerLimit,
+            breakLimit: payload.breakLimit,
             id: uuid(),
           },
         ],
@@ -35,7 +36,13 @@ export const todoReducer = (state, action) => {
         taskAdded: [
           ...state.taskAdded.map((task) => {
             if (task.id === payload.id) {
-              return { ...task, title: payload.title, desc: payload.desc };
+              return {
+                ...task,
+                title: payload.title,
+                desc: payload.desc,
+                timerLimit: payload.timerLimit,
+                breakLimit: payload.breakLimit,
+              };
             }
             return task;
           }),

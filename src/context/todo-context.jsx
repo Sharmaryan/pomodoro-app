@@ -14,6 +14,7 @@ const TodoProvider = ({ children }) => {
       taskAdded: [],
       editClicked: false,
       itemBeingEdited: null,
+      
     }
   );
 

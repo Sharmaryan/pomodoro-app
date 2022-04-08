@@ -1,11 +1,23 @@
 import React, { useState } from "react";
 import "./Modal.css";
+
 import { useTodo } from "../../context/todo-context";
+import { useModal } from "../../context/modal-context";
 export const Modal = () => {
   const { editClicked, dispatch, itemBeingEdited } = useTodo();
-
   const [title, setTitle] = useState(editClicked ? itemBeingEdited.title : "");
   const [desc, setDesc] = useState(editClicked ? itemBeingEdited.desc : "");
+
+  const { timerLimit, setTimerLimit, breakLimit, setBreakLimit } = useModal();
+
+  const handleSelect = (e) => {
+    setTimerLimit((prev) => e.target.value);
+  };
+  const handleBreak = (e) => {
+    setBreakLimit((prev) => e.target.value);
+  };
+
+
 
   return (
     <div className="modal">
@@ -26,6 +38,32 @@ export const Modal = () => {
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
         ></textarea>
+        <p className="model-head">time limit</p>
+        <select
+          value={timerLimit}
+          className="modal-limit"
+          name="duration"
+          id="duration"
+          onChange={handleSelect}
+        >
+          <option value="60">60</option>
+          <option value="45">45</option>
+          <option value="30">30</option>
+          <option value="15">15</option>
+        </select>
+        <p className="model-head">set break</p>
+        <select
+          value={breakLimit}
+          name="break"
+          id="break"
+          onChange={handleBreak}
+          className="modal-limit"
+        >
+          <option value="20">20</option>
+          <option value="15">15</option>
+          <option value="10">10</option>
+          <option value="15">5</option>
+        </select>
       </form>
       <div className="modal-buttons">
         {editClicked ? (
@@ -34,7 +72,13 @@ export const Modal = () => {
             onClick={() =>
               dispatch({
                 type: "UPDATE_HANDLER",
-                payload: { id: itemBeingEdited.id, title, desc },
+                payload: {
+                  id: itemBeingEdited.id,
+                  title,
+                  desc,
+                  timerLimit,
+                  breakLimit,
+                },
               })
             }
           >
@@ -44,7 +88,10 @@ export const Modal = () => {
           <button
             className="modal-btn modal-add"
             onClick={() =>
-              dispatch({ type: "ADD_HANDLER", payload: { title, desc } })
+              dispatch({
+                type: "ADD_HANDLER",
+                payload: { title, desc, timerLimit, breakLimit },
+              })
             }
           >
             add
