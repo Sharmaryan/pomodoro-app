@@ -1,21 +1,24 @@
 .navbar {
-    display: flex;
-    height: 4rem;
-    background-color: var(--primary-color);
-    text-transform: uppercase;
-    color: var(--secondary-color);
-    align-items: center;
+  display: flex;
+  height: 4rem;
+  background-color: var(--primary-color);
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  align-items: center;
 }
 
-.navbar-heading{
-    margin-left: 1rem;
+.navbar-heading {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--secondary-color);
 }
 
 .navbar-modes {
-    margin-left: auto;
-    margin-right: 1rem;
-    font-size: 2rem;
+  margin-left: auto;
+  margin-right: 1rem;
+  font-size: 2rem;
 }
-.navbar-heading, .navbar-modes{
-    cursor: pointer;
+.navbar-heading,
+.navbar-modes {
+  cursor: pointer;
 }
