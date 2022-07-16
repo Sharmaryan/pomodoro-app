@@ -4,11 +4,7 @@
   box-sizing: border-box;
 }
 :root{
-  --primary-color: rgb(6, 179, 83);
-  --secondary-color: rgb(255, 255, 255);
-  --black : black;
+  --primary-color: black;
+  --secondary-color: rgb(255, 255, 255);;
   --lightblue: lightblue;
-}
-.App {
-  text-align: center;
 }

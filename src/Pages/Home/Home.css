@@ -1,0 +1,12 @@
+.home{
+   height: 100vh;
+}
+
+.home-btn{
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    margin-top: 1rem;
+}
+.home-heading{
+    width: 80%;
+}
