@@ -1,0 +1,11 @@
+.task-single{
+    box-shadow: 0 0 10px 5px var(--box-shadow);
+    
+}
+.task-actions{
+margin-left: auto;
+}
+
+.fa-edit, .fa-trash{
+    font-size: 2rem;
+}
