@@ -1,0 +1,9 @@
+.nav-menu {
+  border-radius: 0;
+  top: 0;
+  height: revert;
+  box-shadow: 0 5px 10px rgb(199, 194, 194);
+}
+.nav-menu-logo {
+  font-weight: bold;
+}
