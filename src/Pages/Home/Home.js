@@ -8,7 +8,7 @@ export const Home = () => {
         Lack of direction, not lack of time, is the problem. We all have
         twenty-four hour days.
       </h2>
-      <Link to='/tasks' className="btn home-btn">check your tasks</Link>
+      <Link to='/tasks' className="home-btn">check your tasks</Link>
     </div>
   );
 };
