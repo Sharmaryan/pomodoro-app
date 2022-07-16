@@ -2,7 +2,7 @@
   border-radius: 0;
   top: 0;
   height: revert;
-  box-shadow: 0 5px 10px rgb(199, 194, 194);
+  box-shadow: 0 5px 10px var(--box-shadow);
 }
 .nav-menu-logo {
   font-weight: bold;

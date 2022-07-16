@@ -6,6 +6,8 @@
     background-color: var(--secondary-color);
     border: 1px solid var(--primary-color);
     margin-top: 1rem;
+    text-decoration: none;
+    color: var(--primary-color);
 }
 .home-heading{
     width: 80%;

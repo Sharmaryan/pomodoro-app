@@ -1,0 +1,7 @@
+.todo-greet{
+    font-weight: 500;
+}
+
+.todo-greet, .todo-tasks{
+text-transform: capitalize;
+}
