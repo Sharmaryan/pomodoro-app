@@ -1,3 +1,4 @@
 .pomodoro{
     height: 90vh;
+    z-index: -1;
 }
