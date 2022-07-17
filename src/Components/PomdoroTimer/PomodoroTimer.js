@@ -97,7 +97,7 @@ export const PomodoroTimer = ({task}) => {
            colorsTime={[task[0]?.breakTimer * 60, 0]}
            onComplete={() => dispatch({ type: "FOCUS_HANDLER" })}
            key={key}
-           size={400}
+           size={300}
            strokeWidth={16}
            trailColor={"white"}
          >
@@ -112,9 +112,10 @@ export const PomodoroTimer = ({task}) => {
            colorsTime={[task[0]?.breakTimer * 60, 0]}
            onComplete={() => dispatch({ type: "BREAK_HANDLER" })}
            key={key + 1}
-           size={400}
+           size={300}
            strokeWidth={16}
            trailColor={"white"}
+           
          >
            {({ remainingTime }) => timer({ remainingTime }, "break")}
          </CountdownCircleTimer>

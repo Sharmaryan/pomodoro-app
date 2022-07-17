@@ -18,5 +18,13 @@
  .fa-edit, .fa-trash, .task-name{
     font-size: 1.4rem;
  }
+
+
+ @media only screen and (max-width: 400px) {
+ .fa-edit, .fa-trash, .task-name{
+  margin-left: 5px;
+  font-size: 1rem;
+ }
+ }
  
 }

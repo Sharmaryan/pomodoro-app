@@ -47,3 +47,21 @@
 .disabled-btn{
   background-color: rgb(32, 32, 32);
 }
+
+
+@media only screen and (max-width: 500px) {
+ .modal-inputs{
+    width: 80%;
+ }
+ .modal-input{
+  font-size: 10px;
+ }
+ .modal-inputs span{
+  font-size: 1rem;
+  margin-top: 5px;
+ }
+ .primary-btn, .secondary-btn, .disabled-btn{
+  width: 4rem;
+  font-size: 8px;
+ }
+}
