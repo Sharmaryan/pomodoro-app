@@ -43,3 +43,6 @@
   background-color: var(--secondary-color);
   border: 1px solid var(--primary-color);
 }
+.disabled-btn{
+  background-color: rgb(32, 32, 32);
+}

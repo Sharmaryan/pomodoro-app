@@ -22,6 +22,9 @@ export const Modal = () => {
     dispatch({type: 'CLOSE_MODAL'});
   }
 
+
+
+
   const { todoDispatch } = useTodo();
   const {
     dispatch,
@@ -32,6 +35,9 @@ export const Modal = () => {
     isEditActive,
     currentItemId,
   } = useModal();
+
+
+ const isDisabled = (task.length > 0) && (desc.length > 0) && (focusTimer.length > 0) && (breakTimer.length)
 
   return (
     <div className="modal justify-center items-center">
@@ -97,11 +103,19 @@ export const Modal = () => {
             cancel
           </button>
           {isEditActive ? (
-            <button className="btn primary-btn" onClick={updateHandler}>
+            <button
+              className={`btn ${isDisabled ? "primary-btn" : "disabled-btn"}  `}
+              onClick={updateHandler}
+              disabled={!isDisabled}
+            >
               update
             </button>
           ) : (
-            <button className="btn primary-btn" onClick={addClickHandler}>
+            <button
+              className={`btn ${isDisabled ? "primary-btn" : "disabled-btn"}  `}
+              onClick={addClickHandler}
+              disabled={!isDisabled}
+            >
               add
             </button>
           )}
