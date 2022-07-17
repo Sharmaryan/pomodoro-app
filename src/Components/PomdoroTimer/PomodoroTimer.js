@@ -60,11 +60,11 @@ export const PomodoroTimer = ({task}) => {
    if (mode === "focus") {
      return (
        <div>
-         <span> focus mode</span>
-         <h1 className="focus-mode">
+         <span className='modes-name'> focus mode</span>
+         <h1 className="modes">
            {minutes}:{seconds}
          </h1>
-         <p className="remaining-time focus-time">
+         <p className="remaining-time">
            out of {task[0]?.focusTimer} minutes
          </p>
        </div>
@@ -73,10 +73,10 @@ export const PomodoroTimer = ({task}) => {
    if (mode === "break") {
      return (
        <div>
-         <span>break mode</span>
-         <h1 className="break-mode">
+         <span className="modes-name">break mode</span>
+         <h1 className="modes">
            {minutes}:{seconds}
-           <p className="remaining-time break-time">
+           <p className="remaining-time">
              out of {task[0]?.breakTimer} minutes
            </p>
          </h1>
