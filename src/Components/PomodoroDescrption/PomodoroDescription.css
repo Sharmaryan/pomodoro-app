@@ -8,4 +8,19 @@
 .pomodoro-title{
     font-weight: 700;
     margin-top: 2rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    
+}
+
+@media only screen and (max-width: 900px) {
+ .pomodoro-detail {
+    font-size: 1rem;
+    padding: 1rem;
+ }
+ .pomodoro-title{
+    font-size: 1.3rem;
+    font-weight: 200;
+    padding: 1rem;
+ }
 }

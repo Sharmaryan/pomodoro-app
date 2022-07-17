@@ -3,7 +3,7 @@ import { useContext, createContext, useReducer } from "react";
 const TodoContext = createContext();
 
 const todoReducer = (state, action) => {
-    switch (action.type) {
+  switch (action.type) {
     case "ADD_TASK":
       return { ...state, todoList: [...state.todoList, action.payload] };
     case "DELETE_TASK":
@@ -30,6 +30,8 @@ const todoReducer = (state, action) => {
           ),
         ],
       };
+    // case "PERSISTENT_LIST":
+    //   return { ...state, todoList: action.payload };
     default:
       return { ...state };
   }
@@ -43,6 +45,15 @@ const TodoProvider = ({ children }) => {
       currentElementId: "",
     }
   );
+
+  
+  // useEffect(() => {
+  //   const list = JSON.parse(localStorage.getItem("todoList"));
+  //   todoDispatch({
+  //     type: "PERSISTENT_LIST",
+  //     payload: list,
+  //   });
+  // }, []);
 
   return (
     <TodoContext.Provider value={{ todoList, todoDispatch, currentElementId }}>

@@ -10,6 +10,10 @@ export const Tasks = () => {
   const { todoList } = useTodo();
   const { dispatch } = useModal();
 
+  // useEffect(() =>{
+  //   localStorage.setItem('todoList', JSON.stringify(todoList));
+  // } ,[todoList])
+
   return (
     <div className="tasks">
       <div className="flex my-2">

@@ -14,3 +14,9 @@
   font-size: 2rem;
   cursor: pointer;
 }
+@media only screen and (max-width: 700px) {
+ .fa-edit, .fa-trash, .task-name{
+    font-size: 1.4rem;
+ }
+ 
+}
