@@ -1,0 +1,8 @@
+.buttons{
+    margin-top: 2rem;
+}
+
+.start, .stop, .restart{
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+}

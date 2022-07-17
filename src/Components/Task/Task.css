@@ -1,11 +1,17 @@
-.task-single{
-    box-shadow: 0 0 10px 5px var(--box-shadow);
-    
+.task-single {
+  box-shadow: 0 0 10px 5px var(--box-shadow);
 }
-.task-actions{
-margin-left: auto;
+.task-actions {
+  margin-left: auto;
 }
-
-.fa-edit, .fa-trash{
-    font-size: 2rem;
+.task-name {
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
+  width: 50%;
+}
+.fa-edit,
+.fa-trash {
+  font-size: 2rem;
+  cursor: pointer;
 }

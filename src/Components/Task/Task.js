@@ -1,5 +1,6 @@
 import React from "react";
 import "./Task.css";
+import { Link} from "react-router-dom";
 import { useTodo } from "../../context/todo-context";
 import { useModal } from "../../context/modal-context";
 export const Task = ({ item }) => {
@@ -16,7 +17,9 @@ export const Task = ({ item }) => {
 
   return (
     <div className="task-single flex items-center my-2">
-      <div className="task-name px-1 font-size-2">{item.task}</div>
+      <Link to={`/tasks/${item.id}`} className="task-name px-1 font-size-2">
+        {item.task}
+      </Link>
       <div className="task-actions">
         <i className="fa fa-edit mx-1" onClick={() => editHandler(item)}></i>
         <i
