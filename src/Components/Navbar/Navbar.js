@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useTheme } from "../../context";
 import "./Navbar.css";
 export const Navbar = () => {
@@ -7,6 +8,10 @@ export const Navbar = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
 
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme)
+  },[theme])
 
 
   return (
