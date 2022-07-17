@@ -1,8 +1,7 @@
 import React from "react";
 import { Task } from "../Task/Task";
 import "./Tasks.css";
-import { useTodo } from "../../context/todo-context";
-import { useModal } from "../../context/modal-context";
+import { useModal, useTodo } from "../../context/";
 export const Tasks = () => {
   const clickHandler = () => {
     dispatch({ type: "HANDLE-MODAL" });

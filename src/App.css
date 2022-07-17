@@ -4,7 +4,10 @@
   box-sizing: border-box;
 }
 :root{
-  --primary-color: black;
+  --primary-color: #06021afa;
   --secondary-color: rgb(255, 255, 255);;
-  --box-shadow: rgb(199, 194, 194);
+  --box-shadow: rgba(6, 97, 158, 0.753);
 }
+
+
+

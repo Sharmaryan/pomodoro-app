@@ -2,6 +2,7 @@ import React,{useReducer} from 'react';
 import './PomodoroTimer.css';
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
+
 const pomodoroReducer = (state, action) => {
   switch (action.type) {
     case "FOCUS_HANDLER":
@@ -21,7 +22,7 @@ const pomodoroReducer = (state, action) => {
 };
 
 export const PomodoroTimer = ({task}) => {
-  
+
 
  const buttons = [
    {

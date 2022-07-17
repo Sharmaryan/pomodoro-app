@@ -1,6 +1,7 @@
 import React from "react";
-import { useTodo } from "../../context/todo-context";
-import { useModal } from "../../context/modal-context";
+
+import { useModal, useTodo, useTheme } from "../../context";
+
 import { v4 as uuid } from "uuid";
 import "./Modal.css";
 
@@ -36,12 +37,12 @@ export const Modal = () => {
     currentItemId,
   } = useModal();
 
-
+const {theme} = useTheme(); 
  const isDisabled = (task.length > 0) && (desc.length > 0) && (focusTimer.length > 0) && (breakTimer.length)
 
   return (
-    <div className="modal justify-center items-center">
-      <div className="modal-inputs">
+    <div className={`modal justify-center items-center ${theme}`}>
+      <div className={`modal-inputs ${theme}`}>
         <label htmlFor="task">
           <span className="mx-2 font-size-2">Enter Task</span>
           <input

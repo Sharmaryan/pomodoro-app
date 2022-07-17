@@ -1,3 +1,6 @@
+.todo{
+    min-height: 100vh;
+}
 .todo-greet{
     font-weight: 500;
 }

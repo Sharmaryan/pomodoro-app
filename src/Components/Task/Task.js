@@ -1,11 +1,11 @@
 import React from "react";
 import "./Task.css";
 import { Link} from "react-router-dom";
-import { useTodo } from "../../context/todo-context";
-import { useModal } from "../../context/modal-context";
+import { useModal, useTodo, useTheme } from "../../context";
 export const Task = ({ item }) => {
   const { todoDispatch } = useTodo();
   const { dispatch } = useModal();
+  const {theme} = useTheme();
 
   const editHandler = (item) => {
      dispatch({ type: "HANDLE-EDIT", payload: true, item });
@@ -16,8 +16,8 @@ export const Task = ({ item }) => {
   };
 
   return (
-    <div className="task-single flex items-center my-2">
-      <Link to={`/tasks/${item.id}`} className="task-name px-1 font-size-2">
+    <div className={`task-single flex items-center my-2 ${theme}`}>
+      <Link to={`/tasks/${item.id}`} className={`task-name px-1 font-size-2 ${theme}`}>
         {item.task}
       </Link>
       <div className="task-actions">

@@ -4,8 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import * as ReactDOMClient from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
-import { TodoProvider } from "./context/todo-context";
-import { ModalProvider } from "./context/modal-context";
+import { ThemeProvider, TodoProvider, ModalProvider } from "./context";
 
 const root = ReactDOMClient.createRoot(document.getElementById("root"));
 root.render(
@@ -13,7 +12,9 @@ root.render(
     <Router>
       <TodoProvider>
         <ModalProvider>
-          <App />
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
         </ModalProvider>
       </TodoProvider>
     </Router>
