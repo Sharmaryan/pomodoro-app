@@ -1,0 +1,10 @@
+.pomodoro{
+    min-height: 100vh;
+    z-index: -1;
+}
+@media only screen and (max-width: 900px) {
+.pomodoro{
+    flex-direction: column;
+    justify-content: center;
+}
+}
