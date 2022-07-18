@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Task } from "../Task/Task";
 import "./Tasks.css";
 import { useModal, useTodo } from "../../context/";
@@ -7,12 +7,24 @@ export const Tasks = () => {
     dispatch({ type: "HANDLE-MODAL" });
   };
 
-  const { todoList } = useTodo();
+  const { todoList, todoDispatch } = useTodo();
   const { dispatch } = useModal();
 
-  // useEffect(() =>{
-  //   localStorage.setItem('todoList', JSON.stringify(todoList));
-  // } ,[todoList])
+  useEffect(() => {
+    const list = JSON.parse(localStorage.getItem("todoList")) || [];
+    if (list)
+      todoDispatch({
+        type: "PERSISTENT_LIST",
+        payload: list,
+      });
+  }, [todoDispatch]);
+  
+  useEffect(() => {
+    if (todoList?.length)
+      localStorage.setItem("todoList", JSON.stringify(todoList));
+    if (todoList.length === 0)
+      localStorage.setItem("todoList", JSON.stringify([]));
+  }, [todoList]);
 
   return (
     <div className="tasks">
@@ -22,7 +34,7 @@ export const Tasks = () => {
       </div>
       <div className="tasks-list mx-2">
         {todoList.map((item) => (
-          <Task item={item} key={item.id}/>
+          <Task item={item} key={item.id} />
         ))}
       </div>
     </div>

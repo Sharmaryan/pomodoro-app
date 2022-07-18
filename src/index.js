@@ -1,4 +1,4 @@
-import React, { StrictMode } from "react";
+import React from "react";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -8,7 +8,6 @@ import { ThemeProvider, TodoProvider, ModalProvider } from "./context";
 
 const root = ReactDOMClient.createRoot(document.getElementById("root"));
 root.render(
-  <StrictMode>
     <Router>
       <TodoProvider>
         <ModalProvider>
@@ -18,7 +17,7 @@ root.render(
         </ModalProvider>
       </TodoProvider>
     </Router>
-  </StrictMode>
+
 );
 
 reportWebVitals();

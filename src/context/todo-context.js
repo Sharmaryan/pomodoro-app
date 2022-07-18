@@ -1,4 +1,4 @@
-import { useContext, createContext, useReducer } from "react";
+import { useContext, createContext, useReducer, } from "react";
 
 const TodoContext = createContext();
 
@@ -30,8 +30,8 @@ const todoReducer = (state, action) => {
           ),
         ],
       };
-    // case "PERSISTENT_LIST":
-    //   return { ...state, todoList: action.payload };
+    case "PERSISTENT_LIST":
+      return { ...state, todoList: action.payload };
     default:
       return { ...state };
   }
@@ -46,14 +46,7 @@ const TodoProvider = ({ children }) => {
     }
   );
 
-  
-  // useEffect(() => {
-  //   const list = JSON.parse(localStorage.getItem("todoList"));
-  //   todoDispatch({
-  //     type: "PERSISTENT_LIST",
-  //     payload: list,
-  //   });
-  // }, []);
+
 
   return (
     <TodoContext.Provider value={{ todoList, todoDispatch, currentElementId }}>
