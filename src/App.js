@@ -1,7 +1,8 @@
 import "./App.css";
-import { Navbar } from "./components/Navbar/Navbar";
+import { Navbar } from "./Components";
 import { Routes, Route } from "react-router-dom";
-import { Home, Pomodoro, Todo } from "./pages/index";
+import { Home, Todo, Pomodoro } from "./Pages";
+
 function App() {
   return (
     <div className="App">
@@ -9,8 +10,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/pomodoro" element={<Pomodoro />} />
-        <Route path="/todo" element={<Todo />} />
+        <Route path="/tasks" element={<Todo />} />
+        <Route path="/tasks/:taskId" element={<Pomodoro />} />
       </Routes>
     </div>
   );

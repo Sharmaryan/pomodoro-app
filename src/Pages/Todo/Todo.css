@@ -1,0 +1,19 @@
+.todo{
+    min-height: 100vh;
+}
+.todo-greet{
+    font-weight: 500;
+}
+
+.todo-greet, .todo-tasks{
+text-transform: capitalize;
+}
+
+@media only screen and (max-width: 700px) {
+ .todo-greet{
+    font-size: 2.5rem;
+ }
+ .todo-tasks{
+    font-size: 1.5rem;
+ }
+}
