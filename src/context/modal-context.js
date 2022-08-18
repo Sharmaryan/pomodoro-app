@@ -36,7 +36,15 @@ const modalReducer = (state, action) => {
         isEditActive: false,
       };
     case "CLOSE_MODAL":
-      return { ...state, modal: false };
+      return {
+        ...state,
+        modal: false,
+        task: "",
+        desc: "",
+        focusTimer: "",
+        breakTimer: "",
+        currentItemId: "",
+      };
     default:
       return { ...state };
   }
